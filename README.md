@@ -29,3 +29,8 @@ Instructions for adding cors:
 * `npm i --save cors`
 * `const cors = require('cors');`
 * `app.use(cors());`
+
+## Insanity Mode
+
+Build the entire client from scratch and duplicate this functionality.  I highly
+encourage you all to attempt this if you finish the project early.
