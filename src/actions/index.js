@@ -5,6 +5,7 @@ export const USER_AUTHENTICATED = 'USER_AUTHENTICATED';
 export const USER_UNAUTHENTICATED = 'USER_UNAUTHENTICATED';
 export const AUTHENTICATION_ERROR = 'AUTHENTICATION_ERROR';
 export const GET_USERS = 'GET_USERS';
+export const NEW_USER = 'NEW_USER';
 
 export const authError = (error) => {
   return {
@@ -50,6 +51,18 @@ export const getUsers = () => {
       dispatch({
         type: GET_USERS,
         payload: response.data,
+      });
+    });
+  };
+};
+
+export const newUser = (user) => {
+  return (dispatch) => {
+    const promise = axios.post('http://localhost:5000/users', user);
+    promise.then(response => {
+      dispatch({
+        type: NEW_USER,
+        payload: response,
       });
     });
   };
